@@ -5,9 +5,13 @@
   "description": "Blocks AI-based websites to prevent cheating.",
   "permissions": [
     "declarativeNetRequest",
+    "declarativeNetRequestFeedback",
     "storage",
     "alarms",
     "notifications"
+  ],
+  "host_permissions": [
+    "<all_urls>"
   ],
   "action": {
     "default_popup": "popup/popup.html",
