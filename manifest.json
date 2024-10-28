@@ -8,11 +8,15 @@
     "declarativeNetRequestFeedback",
     "storage",
     "alarms",
-    "notifications"
+    "notifications",
+    "tabs"
   ],
   "host_permissions": [
     "<all_urls>"
   ],
+  "background": {
+    "service_worker": "background.js"
+  },
   "action": {
     "default_popup": "popup/popup.html",
     "default_icon": "images/AI-logo.png"
