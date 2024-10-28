@@ -1,1 +1,2 @@
-# ChromeExtension
+# Block AI - Chrome Extension
+This Chrome Extension allows for specified AI sites to be blocked by user usage. It encourages the user to utilize documentation and motivate them to continue their coding journey through other resources. 

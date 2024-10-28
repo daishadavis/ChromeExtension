@@ -1,10 +1,26 @@
 {
-    "manifest_version": 3,
-    "name": "AI Blocker",
-    "description": "Base Level Extension",
-    "version": "1.0",
-    "action": {
-      "default_popup": "index.html",
-      "default_icon": "AI-logo.png"
-    }
+  "manifest_version": 3,
+  "name": "Block AI",
+  "version": "1.0",
+  "description": "Blocks AI-based websites to prevent cheating.",
+  "permissions": [
+    "declarativeNetRequest",
+    "storage",
+    "alarms",
+    "notifications"
+  ],
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": "images/AI-logo.png"
+  },
+  "options_page": "options/options.html",
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "block_ai_sites",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
   }
+}
