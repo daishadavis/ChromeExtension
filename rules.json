@@ -2,18 +2,48 @@
   {
     "id": 1,
     "priority": 1,
-    "action": { "type": "block" },
+    "action": {
+      "type": "redirect",
+      "redirect": { "extensionPath": "/blocked.html" }
+    },
     "condition": {
-      "urlFilter": "*://chat.openai.com/*",
-      "resourceTypes": {"extensionsPath": "/blocked.html"}
+      "urlFilter": "*.ai", 
+      "resourceTypes": ["main_frame"]
     }
   },
   {
     "id": 2,
     "priority": 1,
-    "action": { "type": "block" },
+    "action": {
+      "type": "redirect",
+      "redirect": { "extensionPath": "/blocked.html" }
+    },
     "condition": {
-      "urlFilter": "*://quillbot.com/*",
+      "urlFilter": "*chatgpt*",
+      "resourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 3,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": { "extensionPath": "/blocked.html" }
+    },
+    "condition": {
+      "urlFilter": "*gemini*",
+      "resourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 4,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": { "extensionPath": "/blocked.html" }
+    },
+    "condition": {
+      "urlFilter": "*quillbot*",
       "resourceTypes": ["main_frame"]
     }
   }
