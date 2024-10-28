@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "AI Website Blocker",
+  "name": "Block AI",
   "version": "1.0",
   "description": "Blocks AI-based websites to prevent cheating.",
   "permissions": [
@@ -15,7 +15,7 @@
     "<all_urls>"
   ],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "background.js"  
   },
   "action": {
     "default_popup": "popup/popup.html",

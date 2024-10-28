@@ -1,5 +1,3 @@
-// console.log("This is a popup!");
-
 // creating a div to store our image
 // const imgDiv = document.createElement("div");
 // document.querySelector("body").appendChild(imgDiv);
@@ -20,30 +18,32 @@
 //     // we access the post url key and append that child
 //     const image = document.createElement("img");
 //     image.setAttribute("src", "https://picsum.photos/1200/800") //the numbers after the URL specify the dimensions of the image
-//     console.log("this is our image", image); 
+//     console.log("this is our image", image);
 
 //     imgDiv.appendChild(image);
 //   });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   // Declare Variables
-  const toggleButton = document.getElementById('toggleButton');
-  const blockStatus = document.getElementById('blockStatus');
+  const toggleButton = document.getElementById("toggleButton");
+  const blockStatus = document.getElementById("blockStatus");
 
   // Toggle blocking status
-  toggleButton.addEventListener('click', function() {
-    if(blockStatus.textContent === 'Inactive') { // Logic to enable blocking
-      blockStatus.textContent = 'Active'
-      toggleButton.textContent = 'Disable Blocking'
-    } else { // Logic to disable blocking
-      blockStatus.textContent = 'Inactive';
-      toggleButton.textContent = 'Enable Blocking'
+  toggleButton.addEventListener("click", function () {
+    if (blockStatus.textContent === "Inactive") {
+      // Logic to enable blocking
+      blockStatus.textContent = "Active";
+      toggleButton.textContent = "Disable Blocking";
+    } else if (blockStatus.textContent === "Active") { // Logic to disable blocking
+      blockStatus.textContent = "Inactive";
+      toggleButton.textContent = "Enable Blocking";
     }
-
-  })
+  });
 
   // Open settings page
-  document.getElementById('settingsButton').addEventListener('click', function() {
-    chrome.runtime.openOptionsPage();
-  })
-})
+  document
+    .getElementById("settingsButton")
+    .addEventListener("click", function () {
+      chrome.runtime.openOptionsPage();
+    });
+});
