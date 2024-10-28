@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "*://chat.openai.com/*",
+      "resourceTypes": {"extensionsPath": "/blocked.html"}
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": { "type": "block" },
+    "condition": {
+      "urlFilter": "*://quillbot.com/*",
+      "resourceTypes": ["main_frame"]
+    }
+  }
+]
