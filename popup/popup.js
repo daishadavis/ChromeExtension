@@ -23,6 +23,10 @@
 //     imgDiv.appendChild(image);
 //   });
 
+// window.onload = function (){
+//   console.log(`THIS IS A TEST OF THE ONLOAD FUNCTION.`)
+// }
+
 document.addEventListener("DOMContentLoaded", function () {
   // Declare Variables
   const toggleButton = document.getElementById("toggleButton");
@@ -34,7 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
       // Logic to enable blocking
       blockStatus.textContent = "Active";
       toggleButton.textContent = "Disable Blocking";
-    } else if (blockStatus.textContent === "Active") { // Logic to disable blocking
+    } else if (blockStatus.textContent === "Active") {
+      // Logic to disable blocking
       blockStatus.textContent = "Inactive";
       toggleButton.textContent = "Enable Blocking";
     }
