@@ -4,7 +4,7 @@
     "priority": 1,
     "action": {
       "type": "redirect",
-      "redirect": { "extensionPath": "/blocked.html" }
+      "redirect": { "extensionPath": "/block/blocked.html" }
     },
     "condition": {
       "urlFilter": "*.ai", 
@@ -16,7 +16,7 @@
     "priority": 1,
     "action": {
       "type": "redirect",
-      "redirect": { "extensionPath": "/blocked.html" }
+      "redirect": { "extensionPath": "/block/blocked.html" }
     },
     "condition": {
       "urlFilter": "*chatgpt*",
@@ -28,7 +28,7 @@
     "priority": 1,
     "action": {
       "type": "redirect",
-      "redirect": { "extensionPath": "/blocked.html" }
+      "redirect": { "extensionPath": "/block/blocked.html" }
     },
     "condition": {
       "urlFilter": "*gemini*",
@@ -40,7 +40,7 @@
     "priority": 1,
     "action": {
       "type": "redirect",
-      "redirect": { "extensionPath": "/blocked.html" }
+      "redirect": { "extensionPath": "/block/blocked.html" }
     },
     "condition": {
       "urlFilter": "*quillbot*",
