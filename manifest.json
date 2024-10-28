@@ -1,10 +1,10 @@
 {
-    "manifest_version": 3,
-    "name": "AI Blocker",
-    "description": "Base Level Extension",
-    "version": "1.0",
-    "action": {
-      "default_popup": "index.html",
-      "default_icon": "AI-logo.png"
-    }
+  "manifest_version": 3,
+  "name": "Block AI",
+  "description": "Base Level Extension",
+  "version": "1.0",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "images/AI-logo.png"
   }
+}
