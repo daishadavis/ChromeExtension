@@ -27,28 +27,43 @@
 //   console.log(`THIS IS A TEST OF THE ONLOAD FUNCTION.`)
 // }
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Declare Variables
-  const toggleButton = document.getElementById("toggleButton");
-  const blockStatus = document.getElementById("blockStatus");
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleButton = document.getElementById('toggleButton');
+  const blockStatus = document.getElementById('blockStatus');
 
-  // Toggle blocking status
-  toggleButton.addEventListener("click", function () {
-    if (blockStatus.textContent === "Inactive") {
-      // Logic to enable blocking
-      blockStatus.textContent = "Active";
-      toggleButton.textContent = "Disable Blocking";
-    } else if (blockStatus.textContent === "Active") {
-      // Logic to disable blocking
-      blockStatus.textContent = "Inactive";
-      toggleButton.textContent = "Enable Blocking";
-    }
+  // Check the current blocking status when the popup opens
+  chrome.storage.local.get('blockingEnabled', (data) => {
+      if (data.blockingEnabled) {
+          blockStatus.textContent = 'Active';
+          toggleButton.textContent = 'Disable Blocking';
+          toggleButton.classList.add('active');
+          toggleButton.classList.remove('inactive');
+      } else {
+          blockStatus.textContent = 'Inactive';
+          toggleButton.textContent = 'Enable Blocking';
+          toggleButton.classList.add('inactive');
+          toggleButton.classList.remove('active');
+      }
   });
 
-  // Open settings page
-  document
-    .getElementById("settingsButton")
-    .addEventListener("click", function () {
-      chrome.runtime.openOptionsPage();
-    });
+  // Toggle blocking status when the button is clicked
+  toggleButton.addEventListener('click', () => {
+      chrome.storage.local.get('blockingEnabled', (data) => {
+          const newStatus = !data.blockingEnabled; // Toggle the status
+          chrome.storage.local.set({ blockingEnabled: newStatus }, () => {
+              // Update UI based on new status
+              if (newStatus) {
+                  blockStatus.textContent = 'Active';
+                  toggleButton.textContent = 'Disable Blocking';
+                  toggleButton.classList.add('active');
+                  toggleButton.classList.remove('inactive');
+              } else {
+                  blockStatus.textContent = 'Inactive';
+                  toggleButton.textContent = 'Enable Blocking';
+                  toggleButton.classList.add('inactive');
+                  toggleButton.classList.remove('active');
+              }
+          });
+      });
+  });
 });
